@@ -1,4 +1,5 @@
 import mongoose, { Schema, Document } from "mongoose";
+import { generateVendorCode } from "../utils/generateVenderCode";
 
 export interface IVendor extends Document {
   name: string;

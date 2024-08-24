@@ -4,13 +4,13 @@ import performanceControllers from "../controllers/performance.controller";
 
 const vendorRouter = Router();
 
-vendorRouter.post("/vendors", vendorControllers.createVendor);
-vendorRouter.get("/vendors", vendorControllers.listVendors);
-vendorRouter.get("/vendors/:vendorId", vendorControllers.getVendorById);
-vendorRouter.put("/vendors/:vendorId", vendorControllers.updateVendor);
-vendorRouter.delete("/vendors/:vendorId", vendorControllers.deleteVendor);
+vendorRouter.post("/", vendorControllers.createVendor);
+vendorRouter.get("/", vendorControllers.listVendors);
+vendorRouter.get("/:vendorCode", vendorControllers.getVendorById);
+vendorRouter.put("/:vendorCode", vendorControllers.updateVendor);
+vendorRouter.delete("/:vendorCode", vendorControllers.deleteVendor);
 vendorRouter.get(
-  "/vendors/:vendorId/performance",
+  "/:vendorCode/performance",
   performanceControllers.getVendorPerformance
 );
 

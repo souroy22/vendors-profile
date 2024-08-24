@@ -5,11 +5,11 @@ import Vendor from "../models/vendor.model";
 const performanceControllers = {
   getVendorPerformance: async (req: Request, res: Response) => {
     try {
-      const vendorId = req.params.vendorId;
-      const vendor = await Vendor.findById(vendorId);
+      const vendorId = req.params.vendorCode;
+      const vendor = await Vendor.findOne({ vendorCode: vendorId });
       if (!vendor) return res.status(404).json({ message: "Vendor not found" });
 
-      const purchaseOrders = await PurchaseOrder.find({ vendor: vendorId });
+      const purchaseOrders = await PurchaseOrder.find({ vendor: vendor._id });
 
       // Calculating performance metrics
       const onTimeDeliveries = purchaseOrders.filter(

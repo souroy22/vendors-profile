@@ -1,10 +1,13 @@
 import { Request, Response } from "express";
 import Vendor from "../models/vendor.model";
+import { generateVendorCode } from "../utils/generateVenderCode";
 
 const vendorControllers = {
   createVendor: async (req: Request, res: Response) => {
     try {
-      const newVendor = new Vendor(req.body);
+      const vendorCode = await generateVendorCode(req.body.name);
+      const data = { ...req.body, vendorCode };
+      const newVendor = new Vendor(data);
       await newVendor.save();
       res.status(201).json(newVendor);
     } catch (error) {
@@ -21,7 +24,9 @@ const vendorControllers = {
   },
   getVendorById: async (req: Request, res: Response) => {
     try {
-      const vendor = await Vendor.findById(req.params.vendorId);
+      const vendor = await Vendor.findOne({
+        vendorCode: req.params.vendorCode,
+      });
       if (!vendor) return res.status(404).json({ message: "Vendor not found" });
       res.status(200).json(vendor);
     } catch (error) {
@@ -30,8 +35,8 @@ const vendorControllers = {
   },
   updateVendor: async (req: Request, res: Response) => {
     try {
-      const updatedVendor = await Vendor.findByIdAndUpdate(
-        req.params.vendorId,
+      const updatedVendor = await Vendor.findOneAndUpdate(
+        { vendorCode: req.params.vendorCode },
         req.body,
         { new: true }
       );
@@ -44,7 +49,9 @@ const vendorControllers = {
   },
   deleteVendor: async (req: Request, res: Response) => {
     try {
-      const deletedVendor = await Vendor.findByIdAndDelete(req.params.vendorId);
+      const deletedVendor = await Vendor.findOneAndDelete({
+        vendorCode: req.params.vendorCode,
+      });
       if (!deletedVendor)
         return res.status(404).json({ message: "Vendor not found" });
       res.status(200).json({ message: "Vendor deleted successfully" });
