@@ -1,6 +1,3 @@
-Here's a sample `README.md` file for your Vendor Profile Management, Purchase Order Tracking, and Vendor Performance Evaluation system using Express.js and TypeScript:
-
-````markdown
 # Vendor Management System
 
 A comprehensive Vendor Management System built with **Express.js** and **TypeScript** that enables users to manage vendor profiles, track purchase orders, and evaluate vendor performance.
@@ -29,12 +26,12 @@ A comprehensive Vendor Management System built with **Express.js** and **TypeScr
 
 ## Installation
 
+````
 1. **Clone the repository**
 
-   ```bash
-   git clone https://github.com/yourusername/vendor-management-system.git
-   cd vendor-management-system
-   ```
+```bash
+git clone https://github.com/yourusername/vendor-management-system.git
+cd vendor-management-system
 ````
 
 2. **Install dependencies**
@@ -42,6 +39,8 @@ A comprehensive Vendor Management System built with **Express.js** and **TypeScr
    ```bash
    npm install
    ```
+
+````
 
 3. **Set up the environment variables**
 
@@ -176,3 +175,4 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 - **Usage** section explains how to interact with the system using API endpoints.
 - **API Endpoints** provides detailed information on each endpoint, including HTTP methods, example requests, and expected responses.
 ```
+````
