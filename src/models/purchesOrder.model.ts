@@ -23,8 +23,8 @@ const PurchaseOrderSchema: Schema = new Schema({
   status: {
     type: String,
     required: true,
-    enum: ["ORDERED", "SHIPPED", "OUT_FOR_DELIVERY", "DELIVERED"],
-    default: "ORDERED",
+    enum: ["PENDING", "COMPLETED", "CANCELED"],
+    default: "PENDING",
   },
   qualityRating: { type: Number },
   issueDate: { type: Date, required: true },

@@ -1,3 +1,6 @@
+Here is the corrected `README.md` file with the proper formatting and highlighting:
+
+````markdown
 # Vendor Management System
 
 A comprehensive Vendor Management System built with **Express.js** and **TypeScript** that enables users to manage vendor profiles, track purchase orders, and evaluate vendor performance.
@@ -26,12 +29,12 @@ A comprehensive Vendor Management System built with **Express.js** and **TypeScr
 
 ## Installation
 
-````
 1. **Clone the repository**
 
-```bash
-git clone https://github.com/yourusername/vendor-management-system.git
-cd vendor-management-system
+   ```bash
+   git clone https://github.com/yourusername/vendor-management-system.git
+   cd vendor-management-system
+   ```
 ````
 
 2. **Install dependencies**
@@ -39,8 +42,6 @@ cd vendor-management-system
    ```bash
    npm install
    ```
-
-````
 
 3. **Set up the environment variables**
 
@@ -166,13 +167,5 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ```
 
-### Explanation
-
-- The **`README.md`** provides a clear and concise overview of the project.
-- **Features** section highlights the main functionalities of the system.
-- **Technologies Used** lists the primary technologies leveraged in the project.
-- **Installation** instructions guide users on how to set up and run the project locally.
-- **Usage** section explains how to interact with the system using API endpoints.
-- **API Endpoints** provides detailed information on each endpoint, including HTTP methods, example requests, and expected responses.
+This format ensures that code blocks and command snippets are correctly highlighted and easy to read.
 ```
-````
